@@ -16,9 +16,8 @@ public class StaticGenerator {
 
     public static void main(String[] args) {
         String projectPath = System.getProperty("user.dir");
-
-        //输入路径 ACM 示例代码模板目录 gky-generator-demo-projects\acm-template
-        String inputPath = projectPath + File.separator + "gky-generator-demo-projects" + File.separator + "acm-template";
+        File parentFile = new File(projectPath).getParentFile();
+        String inputPath = new File(parentFile, "gky-generator-demo-projects/acm-template").getAbsolutePath();
         //输出路径：直接输出到项目的根目录
         //E:\Java\JavaProject\yupi\CodeGenerate\gky-generator
         String outputPath = projectPath;
@@ -27,7 +26,6 @@ public class StaticGenerator {
 
     /**
      * 拷贝文件
-     *
      * @param inputPath  输入路径
      * @param outputPath 输出路径
      */
@@ -64,7 +62,7 @@ public class StaticGenerator {
     private static void copyFileByRecursive(File inputFile, File outputFile) throws IOException {
         // 区分是文件还是目录
         if (inputFile.isDirectory()) {
-            System.out.println(inputFile.getName());
+//            System.out.println(inputFile.getName());
             File destOutputFile = new File(outputFile, inputFile.getName());
             // 如果是目录，首先创建目标目录
             if (!destOutputFile.exists()) {

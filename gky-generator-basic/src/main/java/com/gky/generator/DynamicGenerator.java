@@ -14,12 +14,12 @@ public class DynamicGenerator {
     public static void main(String[] args) throws IOException, TemplateException {
         String projectPath = System.getProperty("user.dir");
         String inputPath = projectPath + File.separator +
-                "gky-generator-basic" + File.separator + "/src/main/resources/templates/MainTemplate.java.ftl";
+                "/src/main/resources/templates/MainTemplate.java.ftl";
         String outputPath = projectPath +
                 File.separator + "MainTemplate.java";
         //数据模型
         MainTemplateConfig mainTemplateConfig = new MainTemplateConfig();
-        mainTemplateConfig.setAuthor("yupi");
+        mainTemplateConfig.setAuthor("gky");
         mainTemplateConfig.setLoop(false);
         mainTemplateConfig.setOutputText("求和结果：");
         doGenerate(inputPath, outputPath, mainTemplateConfig);
@@ -40,7 +40,7 @@ public class DynamicGenerator {
         // 指定模板文件所在的路径
         // E:\Java\JavaProject\yupi\CodeGenerate\gky-generator\gky-generator-basic\src\main\resources\templates
         File templateDir = new File(inputPath).getParentFile();
-        System.out.println(templateDir);
+//        System.out.println(templateDir);
         configuration.setDirectoryForTemplateLoading(templateDir);
 
         // 设置模板文件使用的字符集
@@ -48,7 +48,7 @@ public class DynamicGenerator {
 
         // 创建模板对象，加载指定模板
         String templateName = new File(inputPath).getName();
-        System.out.println(templateName);
+//        System.out.println(templateName);
         Template template = configuration.getTemplate(templateName);
 
         // 生成
