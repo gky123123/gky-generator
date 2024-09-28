@@ -1,8 +1,8 @@
-package com.gky.cli;
+package com.gky.maker.cli;
 
-import com.gky.cli.command.ConfigCommand;
-import com.gky.cli.command.GenerateCommand;
-import com.gky.cli.command.ListCommand;
+import com.gky.maker.cli.command.ConfigCommand;
+import com.gky.maker.cli.command.GenerateCommand;
+import com.gky.maker.cli.command.ListCommand;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 

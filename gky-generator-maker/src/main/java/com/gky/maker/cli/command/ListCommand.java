@@ -1,4 +1,4 @@
-package com.gky.cli.commond;
+package com.gky.maker.cli.command;
 
 import cn.hutool.core.io.FileUtil;
 import picocli.CommandLine.Command;

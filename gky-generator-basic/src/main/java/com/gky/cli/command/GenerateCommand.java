@@ -1,4 +1,4 @@
-package com.gky.cli.commond;
+package com.gky.cli.command;
 
 import cn.hutool.core.bean.BeanUtil;
 import com.gky.generator.MainGenerator;

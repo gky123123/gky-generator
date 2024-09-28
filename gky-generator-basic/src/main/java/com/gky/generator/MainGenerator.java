@@ -17,20 +17,23 @@ public class MainGenerator {
     }
 
     public static void doGenerate(Object model) throws TemplateException, IOException {
-        String projectPath = System.getProperty("user.dir");
-        // 整个项目的根路径
-        File parentFile = new File(projectPath).getParentFile();
-        System.out.println(parentFile);
-        // 输入路径
-        String inputPath = new File(parentFile, "gky-generator-demo-projects/acm-template").getAbsolutePath();
-        String outputPath = projectPath;
-        // 生成静态文件
-        StaticGenerator.copyFilesByRecursive(inputPath, outputPath);
+        String inputRootPath = "E:\\Java\\JavaProject\\yupi\\CodeGenerate\\gky-generator\\gky-generator-demo-projects\\acm-template-pro";
+        String outputRootPath = "E:\\Java\\JavaProject\\yupi\\CodeGenerate\\gky-generator";
 
-        //动态文件替换 //+ "gky-generator-basic" + File.separator
-        String dynamicInputPath = projectPath + File.separator +"/src/main/resources/templates/MainTemplate.java.ftl";
-        String dynamicOutputPath = outputPath + File.separator + "acm-template/src/com/gky/acm/MainTemplate.java";
-        DynamicGenerator.doGenerate(dynamicInputPath, dynamicOutputPath, model);
+        String inputPath;
+        String outputPath;
+
+        inputPath = new File(inputRootPath, "src/com/gky/acm/MainTemplate.java.ftl").getAbsolutePath();
+        outputPath = new File(outputRootPath, "src/com/gky/acm/MainTemplate.java").getAbsolutePath();
+        DynamicGenerator.doGenerate(inputPath, outputPath, model);
+
+        inputPath = new File(inputRootPath, ".gitignore").getAbsolutePath();
+        outputPath = new File(outputRootPath, ".gitignore").getAbsolutePath();
+        StaticGenerator.copyFilesByHutool(inputPath, outputPath);
+
+        inputPath = new File(inputRootPath, "README.md").getAbsolutePath();
+        outputPath = new File(outputRootPath, "README.md").getAbsolutePath();
+        StaticGenerator.copyFilesByHutool(inputPath, outputPath);
     }
 }
 

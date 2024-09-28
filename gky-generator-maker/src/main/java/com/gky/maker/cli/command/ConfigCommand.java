@@ -1,8 +1,7 @@
-package com.gky.cli.commond;
+package com.gky.maker.cli.command;
 
 import cn.hutool.core.util.ReflectUtil;
-import com.gky.model.MainTemplateConfig;
-import picocli.CommandLine;
+import com.gky.maker.model.DataModel;
 import picocli.CommandLine.Command;
 
 import java.lang.reflect.Field;
@@ -14,7 +13,7 @@ public class ConfigCommand implements Runnable {
         // 实现 config 命令的逻辑
         System.out.println("参数信息");
 
-        Field[] fields = ReflectUtil.getFields(MainTemplateConfig.class);
+        Field[] fields = ReflectUtil.getFields(DataModel.class);
 
         // 遍历并打印每个字段的信息
         for (Field field : fields) {
