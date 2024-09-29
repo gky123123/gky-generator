@@ -24,6 +24,7 @@ public class Meta {
         private String inputRootPath;
         private String outputRootPath;
         private String type;
+        private String sourceRootPath;
         private List<FileInfo> files;
 
         @NoArgsConstructor

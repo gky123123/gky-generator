@@ -1,20 +1,19 @@
 package com.gky.maker.generator.file;
 
-import com.gky.maker.model.DataModel;
 import freemarker.template.TemplateException;
 
 import java.io.File;
 import java.io.IOException;
 
 public class FileGenerator {
-    public static void main(String[] args) throws TemplateException, IOException {
-        //数据模型
-        DataModel mainTemplateConfig = new DataModel();
-        mainTemplateConfig.setAuthor("gky");
-        mainTemplateConfig.setLoop(true);
-        mainTemplateConfig.setOutputText("求和结果：");
-        doGenerate(mainTemplateConfig);
-    }
+//    public static void main(String[] args) throws TemplateException, IOException {
+//        //数据模型
+//        DataModel mainTemplateConfig = new DataModel();
+//        mainTemplateConfig.setAuthor("gky");
+//        mainTemplateConfig.setLoop(true);
+//        mainTemplateConfig.setOutputText("求和结果：");
+//        doGenerate(mainTemplateConfig);
+//    }
 
     public static void doGenerate(Object model) throws TemplateException, IOException {
         String projectPath = System.getProperty("user.dir");

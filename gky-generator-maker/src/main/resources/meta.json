@@ -6,8 +6,9 @@
   "author": "gky",
   "createTime": "2024-09-28",
   "fileConfig": {
-    "inputRootPath": "E:/Java/JavaProject/yupi/CodeGenerate/gky-generator/gky-generator-demo-projects/acm-template-pro",
+    "inputRootPath": ".source/acm-template-pro",
     "outputRootPath": "generated",
+    "sourceRootPath": "E:/Java/JavaProject/yupi/CodeGenerate/gky-generator/gky-generator-demo-projects/acm-template-pro",
     "type": "dir",
     "files": [
       {
@@ -43,7 +44,7 @@
         "fieldName": "author",
         "type": "String",
         "description": "作者注释",
-        "defaultValue": "gky",
+        "defaultValue": "yupi",
         "abbr": "a"
       },
       {
